@@ -1,17 +1,17 @@
 # M1st1fy 
 
 Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un equipo concebido para la realización de CTFs :-)
-> Nota: Pueden encontrar los otros documentos del HackLab2024 [aqui](https://github.com/M1st1fy/HackLab2024)
+> Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
 - Agustín M. Blanco
 - Tomás N. Raspa
 ## Índice
 
-1. Turnero
-	1. Primera aproximación
-	2. Observando en profundidad
-	3. El ataque
+1. [Turnero](#Turnero)
+	1. [Primera aproximación(#Primera_aproximación)
+	2. [Observando en profundidad](#Observando_en_produndidad)
+	3. [El ataque](#El_ataque)
 
 
 ---
@@ -38,7 +38,7 @@ Jugando un poco con el sistema vemos que a priori lo único que parecería permi
 
 Ayudándonos de las [herramientas de desarrollador](https://developer.chrome.com/docs/devtools?hl=es-419) de nuestro navegador, podemos ver las peticiones que se están haciendo al servidor junto con las respuestas que éste nos provee. 
 
-Al cargar la página con estas herramientas observamos que realmente se está construyendo en dos pasos. Primero se obtiene la estructura, y luego se obtiene la información a traves de una API
+Al cargar la página con estas herramientas observamos que realmente se está construyendo en dos pasos. Primero se obtiene la estructura, y luego se ~~obtiene la información~~ obtienen los turnos a través de una API
 ![Requests en DevTools para Mis Turnos](images/turnero/peticionesMisTurnos.png)
 
 Al observar con mayor detenimiento la segunda petición vemos que se trata de un [GET](https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET) a  `api/1/appointments/` que devuelve un [JSON](https://es.wikipedia.org/wiki/JSON) con la información sobre los turnos:
@@ -90,8 +90,8 @@ Al observar con mayor detenimiento la segunda petición vemos que se trata de un
 Si miramos la información contenida en la respuesta, todos los turnos devueltos pertenecen al `user_id` 1, y, coincidentemente, la petición que habíamos hecho, la palabra `appointments` estaba precedida por un 1. Esto nos lleva hacer la siguiente suposición:
 >El [endpoint](https://www.cloudflare.com/es-es/learning/security/api/what-is-api-endpoint/) de la API probablemente sea `/api/:user_id/appointments/`, siendo `:user_id` el `id` del usuario que del que se desea obtener la lista de turnos 
 
-Prestemos ahora atención al comportamiento del sistema cuando se desea cancelar un turno.
-Al presionar `Cancelar` recibimos un [prompt] (https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) consultando si estamos seguros. 
+Prestemos ~~ahora~~ atención al comportamiento del sistema cuando se desea cancelar un turno.
+Al presionar `Cancelar` recibimos un [prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) consultando si estamos seguros.
 ![](images/turnero/alertCancelacionTurno.png)
 
 Al aceptar, vemos que la página se recarga y, si miramos nuevamente las herramientas de desarrollador, vemos que se ejecutaron dos peticiones
@@ -106,11 +106,11 @@ Observando el formato de la request, si lo extrapolamos con los datos que conoc�
 
 >El [endpoint](https://www.cloudflare.com/es-es/learning/security/api/what-is-api-endpoint/) de la API para cancelar turnos es `/api/appointments/:id_turno`, siendo `:id_turno` el `id` del turno que se desea cancelar
 
-Teniendo toda esta información, veamos ahora cómo podemos hacer para cancelarle los turnos a `xdalvik`:)
+Teniendo toda esta información, veamos ahora cómo podemos hacer para cancelarle los turnos a `xdalvik` :)
 
 ### El ataque
 
-Nuestro objetivo es cancelarle los turnos a `xdalvik` sin afectar a los demás usuarios. Sin embargo, para poder cancelar un turno, primero necesitamos su `id`. Para lograr esto, con la información obtenida anteriormente y un poco de pensamiento lateral, llegamos a la siguiente estrategia. Podemos utilizar el endpoint `/api/:id_usuario/appointments/` y un poco de fuerza bruta para encontrar el `id` del usuario correxpondiente a `xdalvik`.
+Nuestro objetivo es cancelarle los turnos a `xdalvik` sin afectar a los demás usuarios. Sin embargo, para poder cancelar un turno, primero necesitamos su `id` *de usuario*. Para lograr esto, con la información obtenida anteriormente y un poco de pensamiento lateral, llegamos a la siguiente estrategia. Podemos utilizar el endpoint `/api/:id_usuario/appointments/` y un poco de fuerza bruta para encontrar el `id` del usuario correspondiente a `xdalvik`.
 
 ```python
 from concurrent.futures import ThreadPoolExecutor
