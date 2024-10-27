@@ -4,21 +4,21 @@ Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un
 > Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
-- Tomás N. Raspa
-- Agustín M. Blanco
+| Integrante        | Facultad                                        |
+| :---------------- | :---------------------------------------------- |
+| Tomás N. Raspa    | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+| Agustín M. Blanco | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+
 ## Índice
 
-- [M1st1fy](#m1st1fy)
-	- [Integrantes](#integrantes)
-	- [Índice](#índice)
-	- [Blog HackLab](#blog-hacklab)
-		- [Primera aproximación](#primera-aproximación)
-		- [Observando en profundidad](#observando-en-profundidad)
-			- [Carga de imágenes](#carga-de-imágenes)
-		- [El ataque](#el-ataque)
-			- [XSS](#xss)
-			- [Creando la función](#creando-la-función)
-			- [Exploit final](#exploit-final)
+1. [Blog HackLab](#blog_hacklab)
+	1. [Primera aproximación](#Primera_aproximación)
+	2. [Observando en profundidad](#Observando_en_profundidad)
+		1. [Carga de imágenes](#Carga_de_imágenes)
+	3. [El ataque](#El_ataque)
+		1. [XSS](#XSS)
+		2. [Creando la función](#Creando_la_función)
+		3. [Exploit final](#Exploit_final)
 
 
 ---
