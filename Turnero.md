@@ -1,18 +1,21 @@
 # M1st1fy 
 
 Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un equipo concebido para la realización de CTFs :-)
+
 > Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
-- Agustín M. Blanco
-- Tomás N. Raspa
+| Integrante        | Facultad                                        |
+| :---------------- | :---------------------------------------------- |
+| Agustín M. Blanco | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+| Tomás N. Raspa    | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+
 ## Índice
 
 1. [Turnero](#Turnero)
-	1. [Primera aproximación(#Primera_aproximación)
-	2. [Observando en profundidad](#Observando_en_produndidad)
+	1. [Primera aproximación](#Primera_aproximación)
+	2. [Observando en profundidad](#Observando_en_profundidad)
 	3. [El ataque](#El_ataque)
-
 
 ---
 ## Turnero
@@ -167,4 +170,5 @@ if __name__ == '__main__':
 Luego de ejecutar este último script, si recargamos la página en el navegador veremos que hemos obtenido la flag!
 
 ![](images/turnero/flag.png)
+
 >Flag: `d27fa3f8fc14ea101603d09436e28bf6`

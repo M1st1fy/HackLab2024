@@ -1,6 +1,7 @@
 # M1st1fy 
 
 Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un equipo concebido para la realización de CTFs :-)
+
 > Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
@@ -11,7 +12,7 @@ Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un
 
 ## Índice
 
-1. [Blog HackLab](#blog_hacklab)
+1. [Blog HackLab](#Blog_HackLab)
 	1. [Primera aproximación](#Primera_aproximación)
 	2. [Observando en profundidad](#Observando_en_profundidad)
 		1. [Carga de imágenes](#Carga_de_imágenes)
@@ -19,7 +20,6 @@ Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un
 		1. [XSS](#XSS)
 		2. [Creando la función](#Creando_la_función)
 		3. [Exploit final](#Exploit_final)
-
 
 ---
 ## Blog HackLab

@@ -1,6 +1,7 @@
 # M1st1fy 
 
 Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un equipo concebido para la realización de CTFs :-)
+
 > Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
@@ -11,11 +12,13 @@ Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un
 
 ## Índice
 
-1. [Turnero](#Turnero)
+1. [SnowStorm](#SnowStorm)
 	1. [Primera aproximación](#Primera_aproximación)
-	2. [Observando en profundidad](#Observando_en_produndidad)
+	2. [Observando en profundidad](#Observando_en_profundidad)
+		1. [La API](#La_API)
+		2. [El token](#El_token)
+			1. [Otra forma](#Otra_forma)
 	3. [El ataque](#El_ataque)
-
 
 ---
 ## SnowStorm

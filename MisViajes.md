@@ -1,11 +1,15 @@
 # M1st1fy 
 
 Este documento fue confeccionado por [`M1st1fy`](https://github.com/m1st1fy), un equipo concebido para la realización de CTFs :-)
+
 > Nota: Pueden encontrar los otros documentos del HackLab2024 [aquí](https://github.com/M1st1fy/HackLab2024)
 ## Integrantes
 
-- Agustín M. Blanco
-- Tomás N. Raspa
+| Integrante        | Facultad                                        |
+| :---------------- | :---------------------------------------------- |
+| Agustín M. Blanco | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+| Tomás N. Raspa    | [U.T.N. F.R.B.A.](https://www.frba.utn.edu.ar/) |
+
 ## Índice
 
 1. [Mis Viajes](#Mis_Viajes)
@@ -150,7 +154,17 @@ Al subirlo, en el campo modelo obtenemos la estructura de la tabla `images`.
 ![](images/misViajes/resultadoPayload3.png)
 
 ```sql
-CREATE TABLE images (id INTEGER PRIMARY KEY AUTOINCREMENT, user_id TEXT NOT NULL, filename TEXT NOT NULL, description TEXT, latitude REAL, longitude REAL, datetime TEXT, make TEXT, model TEXT)
+CREATE TABLE images (
+	id INTEGER PRIMARY KEY AUTOINCREMENT, 
+	user_id TEXT NOT NULL, 
+	filename TEXT NOT NULL, 
+	description TEXT, 
+	latitude REAL, 
+	longitude REAL, 
+	datetime TEXT, 
+	make TEXT, 
+	model TEXT
+)
 ```
 
 Finalmente, para obtener los `user_id` que necesitamos, podemos construir una última imagen. 
