@@ -41,7 +41,7 @@ Jugando un poco con el sistema vemos que a priori lo único que parecería permi
 
 Ayudándonos de las [herramientas de desarrollador](https://developer.chrome.com/docs/devtools?hl=es-419) de nuestro navegador, podemos ver las peticiones que se están haciendo al servidor junto con las respuestas que éste nos provee. 
 
-Al cargar la página con estas herramientas observamos que realmente se está construyendo en dos pasos. Primero se obtiene la estructura, y luego se ~~obtiene la información~~ obtienen los turnos a través de una API
+Al cargar la página con estas herramientas observamos que realmente se está construyendo en dos pasos. Primero se obtiene la estructura, y luego se obtienen los turnos a través de una API
 ![Requests en DevTools para Mis Turnos](images/turnero/peticionesMisTurnos.png)
 
 Al observar con mayor detenimiento la segunda petición vemos que se trata de un [GET](https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET) a  `api/1/appointments/` que devuelve un [JSON](https://es.wikipedia.org/wiki/JSON) con la información sobre los turnos:
@@ -93,7 +93,7 @@ Al observar con mayor detenimiento la segunda petición vemos que se trata de un
 Si miramos la información contenida en la respuesta, todos los turnos devueltos pertenecen al `user_id` 1, y, coincidentemente, la petición que habíamos hecho, la palabra `appointments` estaba precedida por un 1. Esto nos lleva hacer la siguiente suposición:
 >El [endpoint](https://www.cloudflare.com/es-es/learning/security/api/what-is-api-endpoint/) de la API probablemente sea `/api/:user_id/appointments/`, siendo `:user_id` el `id` del usuario que del que se desea obtener la lista de turnos 
 
-Prestemos ~~ahora~~ atención al comportamiento del sistema cuando se desea cancelar un turno.
+Ahora prestemos atención al comportamiento del sistema cuando se desea cancelar un turno.
 Al presionar `Cancelar` recibimos un [prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) consultando si estamos seguros.
 ![](images/turnero/alertCancelacionTurno.png)
 
